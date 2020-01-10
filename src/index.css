@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.quote-header {
+  color: #61dafb;
+}
+
+.quote-body {
+  padding: 16px;
+}
+
+.quote-author {
+  float: right;
+}
+
+.type-area {
+  width: 50vw;
+  font-size: 16px;
+  padding: 8px;
+}
+
+/*************************
+ * Margin Helpers
+ *************************/
+
+.mbm {
+  margin-bottom: 8px;
+}
+
+.mbl {
+  margin-bottom: 16px;
+}
+
+.mbxl {
+  margin-bottom: 32px;
+}
