@@ -16,12 +16,30 @@ code {
   color: #61dafb;
 }
 
+.code-block {
+  width: 70vw;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.quote-title {
+  margin-bottom: 8px;
+}
+
+.quote-body {
+  display: block;
+  margin-bottom: 16px;
+}
+
 .quote-body, .type-area {
   width: 70vw;
 }
 
-.quote-author {
-  float: right;
+.quote-provided-by {
+  display: block;
+  margin-bottom: 32px;
+  font-size: 15px;
+  color: #AAAAAA;
 }
 
 .type-area {

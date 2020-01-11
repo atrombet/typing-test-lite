@@ -4,8 +4,8 @@ const QuoteDisplay = ({quote}) => {
   return (
     <div className="mbxl">
       <h4 className="quote-title">{quote.title}</h4>
-      <p className="quote-body">{quote.body}</p>
-      <i className="quote-author">- {quote.author}</i>
+      <i className="quote-provided-by">Provided by: {quote.providedBy}</i>
+      <code className="quote-body">{quote.body}</code>
     </div>
   );
 };
