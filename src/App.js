@@ -23,7 +23,12 @@ function App() {
       text: e.target.value,
       matches: quote.body.indexOf(e.target.value) === 0
     });
+    setQuoteComplete(e.target.value === quote.body);
   };
+
+  // Quote Complete state
+  const [ quoteComplete, setQuoteComplete ] = useState(false);
+
 
   return (
     <div className="App">
@@ -32,6 +37,7 @@ function App() {
         <h1 className="page-header">Typing Test</h1>
         <QuoteDisplay quote={quote} />
         <TypeArea userText={userText} onChange={onTextChange} />
+        {quoteComplete && <i className="done">Great Job!</i>}
       </header>
     </div>
   );

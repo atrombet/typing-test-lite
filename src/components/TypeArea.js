@@ -2,7 +2,7 @@ import React from 'react';
 
 const TypeArea = ({userText, onChange}) => {
   return (
-    <textarea className="type-area"
+    <textarea className="type-area mbxl"
               rows="4"
               style={{color: !userText.matches && 'red'}}
               value={userText.text}
