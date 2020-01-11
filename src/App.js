@@ -1,34 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import QuoteDisplay from './components/QuoteDisplay';
 import TypeArea from './components/TypeArea';
+import { useQuoteState, useCompleteState, useUserTextState } from './state';
 
 function App() {
+  const { quote } = useQuoteState();
+  const { userText, setUserText } = useUserTextState();
+  const { complete, setComplete } = useCompleteState();
 
-  // Quote State
-  const [ quote ] = useState({
-    title: 'My First Quote',
-    author: 'Michael Scott',
-    body: "You miss 100% of the shots you don't take. - Wayne Gretzky"
-  });
-
-  // User Text State
-  const [ userText, setUserText ] = useState({
-    text: '',
-    matches: true
-  });
   const onTextChange = (e) => {
     setUserText({
       text: e.target.value,
       matches: quote.body.indexOf(e.target.value) === 0
     });
-    setQuoteComplete(e.target.value === quote.body);
+    setComplete(e.target.value === quote.body);
   };
-
-  // Quote Complete state
-  const [ quoteComplete, setQuoteComplete ] = useState(false);
-
 
   return (
     <div className="App">
@@ -37,7 +25,7 @@ function App() {
         <h1 className="page-header">Typing Test</h1>
         <QuoteDisplay quote={quote} />
         <TypeArea userText={userText} onChange={onTextChange} />
-        {quoteComplete && <i className="done">Great Job!</i>}
+        {complete && <i className="done">Great Job!</i>}
       </header>
     </div>
   );

@@ -12,12 +12,12 @@ code {
     monospace;
 }
 
-.page-header {
+.page-header, .quote-title {
   color: #61dafb;
 }
 
-.quote-body {
-  padding: 16px;
+.quote-body, .type-area {
+  width: 70vw;
 }
 
 .quote-author {
@@ -25,7 +25,6 @@ code {
 }
 
 .type-area {
-  width: 50vw;
   font-size: 16px;
   padding: 8px;
 }
