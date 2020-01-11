@@ -1,8 +1,12 @@
 import React from 'react';
 
-const TypeArea = () => {
+const TypeArea = ({userText, onChange}) => {
   return (
-    <textarea className="type-area" rows="4" />
+    <textarea className="type-area"
+              rows="4"
+              style={{color: !userText.matches && 'red'}}
+              value={userText.text}
+              onChange={onChange} />
   )
 };
 
