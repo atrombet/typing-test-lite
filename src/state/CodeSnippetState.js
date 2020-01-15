@@ -16,14 +16,19 @@ const snippets = {
 };
 
 export const useCodeSnippetState = () => {
-  const [ codeSnippetId, setCodeSnippetId ] = useState(1);
-  const [ codeSnippet, setCodeSnippet] = useState(snippets[codeSnippetId]);
+  const [ codeSnippet, setCodeSnippet] = useState({
+    selectedId: 1,
+    snippet: snippets[1]
+  });
 
   const setNextCodeSnippet = () => {
-    setCodeSnippetId((state) => {
-      return state < Object.keys(snippets).length ? state + 1 : 1;
+    setCodeSnippet((state) => {
+      const newId = state.selectedId < Object.keys(snippets).length ? state + 1 : 1;
+      return {
+        selectedId: newId,
+        snippet: snippets[newId]
+      };
     });
-    setCodeSnippet(snippets[codeSnippetId]);
   };
 
   return { codeSnippet, setNextCodeSnippet };
